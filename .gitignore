@@ -1,0 +1,31 @@
+# Build artifacts
+target/
+dist/
+**/node_modules/
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+*.swp
+*.tmp
+*.log
+
+# Release archives / binaries (built in CI)
+*.tar.gz
+*.tgz
+jet-linux-*
+jet-darwin-*
+jet-windows-*
+SHA256SUMS
+
+# Windows GUI installer (built from .nsi/.iss)
+**/jet-setup.exe
+**/jet.exe
+windows/Output/
+
+# Secrets — never commit (safety net; none live here)
+**/.env
+**/.env.local
+**/.dev.vars
+*.key
+*.pem

@@ -1,0 +1,10 @@
+# Проект собирается НАТИВНО на Windows (host = x86_64-pc-windows-gnu),
+# линкер приходит вместе с компонентом rust-mingw — переопределять его не нужно.
+#
+# Кросс-сборка с macOS/Linux на Windows требует mingw-w64. Тогда линкер
+# задается переменными окружения, а не этим файлом (иначе он ломает нативную
+# сборку, где такого gcc нет):
+#
+#   export CARGO_TARGET_X86_64_PC_WINDOWS_GNU_LINKER=x86_64-w64-mingw32-gcc
+#   export CARGO_TARGET_X86_64_PC_WINDOWS_GNU_AR=x86_64-w64-mingw32-ar
+#   cargo build --release --target x86_64-pc-windows-gnu

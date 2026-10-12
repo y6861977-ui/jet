@@ -1,0 +1,17 @@
+[package]
+name = "jet"
+version = "0.1.0"
+edition = "2024"
+license = "MIT"
+description = "A fast, zero-dependency, npm-compatible package manager that keeps working on blocked registries and flaky networks."
+repository = "https://github.com/OWNER/jet"
+readme = "README.md"
+
+[dependencies]
+
+# `pro` gates the closed-source Pro features (jet explain / jet diff, the license
+# client). Their sources are NOT part of this open-source repository. The name is
+# declared here only so the crate's conditional code has a known feature to switch
+# on; enabling it in this repo builds nothing extra.
+[features]
+pro = []
