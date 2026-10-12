@@ -146,11 +146,16 @@ fn print_preview(data_dir: &Path, exe_dir: Option<&Path>, exe: &Path) {
 /// Normalize a path for comparison: strip trailing separators, and on Windows
 /// fold separators and case so `C:/Foo\` == `c:\foo`.
 fn normalize(p: &Path) -> String {
-    let s = p
-        .to_string_lossy()
-        .trim_end_matches(['/', '\\'])
-        .replace('/', "\\");
-    if cfg!(windows) { s.to_lowercase() } else { s }
+    let s = p.to_string_lossy();
+    let s = s.trim_end_matches(['/', '\\']);
+    // On Windows paths are case-insensitive and `/` and `\` are interchangeable,
+    // so fold both. On Unix the separator is `/` and case matters — leave as is,
+    // otherwise a Unix PATH entry like /opt/jet/bin would never match.
+    if cfg!(windows) {
+        s.replace('/', "\\").to_lowercase()
+    } else {
+        s.to_string()
+    }
 }
 
 /// Remove `dir` from the user's persistent PATH. Returns `Ok(true)` if a change
