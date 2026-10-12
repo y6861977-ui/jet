@@ -24,12 +24,12 @@ It's written in Rust with the standard library only — no third-party crates.
 **macOS / Linux**
 
 ```sh
-curl -fsSL https://github.com/OWNER/jet-dist/releases/latest/download/install.sh | sh
+curl -fsSL https://github.com/y6861977-ui/jet-dist/releases/latest/download/install.sh | sh
 ```
 
 **Windows**
 
-Download `jet-setup.exe` from the [latest release](https://github.com/OWNER/jet-dist/releases/latest)
+Download `jet-setup.exe` from the [latest release](https://github.com/y6861977-ui/jet-dist/releases/latest)
 and run it, or grab the raw `jet-windows-x64.exe`.
 
 ## Usage

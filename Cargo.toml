@@ -4,7 +4,7 @@ version = "0.1.0"
 edition = "2024"
 license = "MIT"
 description = "A fast, zero-dependency, npm-compatible package manager that keeps working on blocked registries and flaky networks."
-repository = "https://github.com/OWNER/jet"
+repository = "https://github.com/y6861977-ui/jet"
 readme = "README.md"
 
 [dependencies]
